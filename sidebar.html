@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+
+      <style>
+        /* side bar */
+
+        #sidebar-header ul li a {
+        display: flex;
+        }
+
+        #sidebar-header {
+            justify-content: space-between;
+        }
+
+        #menu li a{
+            color: #fff;
+        }
+        #menu li a:hover{
+            color: #ffffff8c ;
+        }
+
+      </style>
+</head>
+<body>
+    
+
+
+    <div class="container-fluid" >
+        <div class="row flex-nowrap">
+            <!-- sidebar header -->
+            <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 " style="background-color: #3B7080;">
+                <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100" id="sidebar-header">
+                    <div>
+                        <a href="javascript:;" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none" style="cursor:initial;">
+                            <span class="fs-5 d-none d-sm-inline">Menu</span>
+                        </a>
+                        <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                            <li class="nav-item">
+                                <a href="#" class="nav-link align-middle px-0">
+                                    <i class="material-icons">home</i> <span class="ms-1 d-none d-sm-inline">Inicio</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link align-middle px-0">
+                                    <i class="material-icons">edit_calendar</i> <span class="ms-1 d-none d-sm-inline">
+                                        Registro de turno
+                                    </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link align-middle px-0">
+                                    <i class="material-icons">list_alt</i> <span class="ms-1 d-none d-sm-inline">
+                                        Nuevos registros
+                                    </span>
+                                </a>
+                            </li>
+                        </ul>
+                        <hr>
+                    </div>
+                    <div class="dropdown pb-4">
+                        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                            <span class="d-none d-sm-inline mx-1">Erika</span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                            <li><a class="dropdown-item" href="#">Configuración</a></li>
+                            <li><a class="dropdown-item" href="#">Perfil</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- page content -->
+            <div class="col py-3">
+
+                Aquí hay una barra lateral vertical de 2 niveles del lado izquierdo con elementos de menú plegables. El menú funciona como un "acordeón" donde solo se abre un solo menú a la vez. También es receptivo, lo que permite que el área de contenido principal sea visible. La barra lateral se reduce en ancho, oculta las etiquetas de texto y se contrae en iconos solo en dispositivos móviles.
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="js/bootstrap.min.js"></script>
+</body>
+</html>

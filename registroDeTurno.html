@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de horario de adoración</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
+
+    <link rel="stylesheet" href="src/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+
+    <link href="https://getbootstrap.com/docs/5.2/assets/css/docs.css" rel="stylesheet">
+
+
+    <style>
+
+        ul .list-group-item{
+            background-color: #fdec6f;
+        }
+
+        .list-group-item span{
+            background-color: #fc913a;
+        }
+
+        .postick{
+            font-size: 0.875rem;
+            /* margin: 2px; */
+            padding: 0.2rem;
+        }
+
+        
+
+        tbody{
+            border-top: 2.5px solid #dee2e6;
+        }
+        tbody td:hover{
+            background-color: rgba(188,232,241,.3);
+        }
+
+
+        /* side bar */
+
+        #sidebar-header ul li a {
+        display: flex;
+        }
+
+        #sidebar-header {
+            justify-content: space-between;
+        }
+
+        #menu li a{
+            color: #fff;
+        }
+        #menu li a:hover{
+            color: #ffffff8c ;
+        }
+
+        /* calendario grid */
+        .grid-calendario .row{
+            width: 100%;
+            height: 30px;
+            border: 1px solid #000;
+            border-bottom: 0px;
+       }
+       .grid-calendario .row:last-child{
+        border-bottom: 1px solid #000;;
+       }
+       .grid-calendario .row .col{
+        border-right: 1px solid #000;
+        width: 100%;
+        height: 100%
+       }
+       .grid-calendario .row .col:last-child{
+        border-right: 0px;
+       }
+       .grid-calendario .row .col-2{
+        border-right: 1px solid #000;
+       }
+
+
+    </style>
+
+    <link rel="stylesheet" href="src/css/registroTurno.css">
+
+</head>
+<body class="">
+
+          <div class="container-fluid" >
+            <div class="row flex-nowrap">
+                <!-- sidebar header -->
+                <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 " style="background-color: #3B7080;">
+                    <div class="d-flex flex-column align-items-center align-items-md-start px-3 pt-2 text-white min-vh-100" id="sidebar-header">
+                        <div>
+                            <a href="javascript:;" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none" style="cursor:initial;">
+                                <span class="fs-5 d-none d-md-inline">Menu</span>
+                            </a>
+                            <ul class="nav nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link align-middle px-0">
+                                        <i class="material-icons">home</i> <span class="ms-1 d-none d-md-inline">Inicio</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link align-middle px-0">
+                                        <i class="material-icons">edit_calendar</i> <span class="ms-1 d-none d-md-inline">
+                                            Registro de turno
+                                        </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="nav-link align-middle px-0">
+                                        <i class="material-icons">list_alt</i> <span class="ms-1 d-none d-md-inline">
+                                            Nuevos registros
+                                        </span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <hr>
+                        </div>
+                        <div class="dropdown pb-4">
+                            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle">
+                                <span class="d-none d-md-inline mx-1">Erika</span>
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                                <li><a class="dropdown-item" href="#">Configuración</a></li>
+                                <li><a class="dropdown-item" href="#">Perfil</a></li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Cerrar Sesión</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <!-- page content -->
+                <div class="col py-3">
+
+                    <!-- calendario de registro de turno -->
+                    <!-- <div class=" px-4 py-5" style="margin-top:3rem!important;">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-sm align-middle">
+                                <thead class="">
+                                    <tr>
+                                        <th scope="col" class="table-active">Madrugada</th>
+                                        <th scope="col">Domingo</th>
+                                        <th scope="col">Lunes</th>
+                                        <th scope="col">Martes</th>
+                                        <th scope="col">Miercoles</th>
+                                        <th scope="col">Jueves</th>
+                                        <th scope="col">Viernes</th>
+                                        <th scope="col">Sabado</th>
+                                    </tr>
+                                </thead>
+                                <tbody >
+                                    <tr>
+                                        <th scope="row">0:00 - 1:00 am</th>
+                                        <td>
+                                            <div class="postick border rounded-2 p-2 bg-primary bg-opacity-50">
+                                                <div class="postick-body d-flex justify-content-between align-items-center">
+                                                    adoradores <span class="badge bg-danger rounded-pill">14</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">1:00 - 2:00 am</th>
+                                        <td>
+                
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">2:00 - 3:00 am</th>
+                                        <td>
+                                            <div class="postick border rounded-2 p-2 bg-warning bg-opacity-50">
+                                                <div class="postick-body d-flex justify-content-between align-items-center">
+                                                    Lista dorada <span class="badge bg-danger rounded-pill">4</span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                      </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> -->
+
+
+                        <!-- <div class="container">
+                            <div class="cell header main">MADRUGADA</div>
+                            <div class="cell header">DOM</div>
+                            <div class="cell header">LUN</div>
+                            <div class="cell header">MAR</div>
+                            <div class="cell header">MIE</div>
+                            <div class="cell header">JUE</div>
+                            <div class="cell header">VIE</div>
+                            <div class="cell header">SAB</div>
+                            <div class="cell ">00:00 - 1:00 AM</div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                            <div class="cell"></div>
+                          </div> -->
+                    
+
+                   <!-- Prueba de calendario dinamico -->
+                   
+                   <div class="wrapper">
+                        <div class="">
+                            <div id="calendar1">
+                            </div>
+                        </div>
+                        <div class="">
+                            <div id="calendar2">
+                            </div>
+                        </div>
+                        <div class="">
+                            <div id="calendar3">
+                            </div>
+                        </div>
+                        <div class="">
+                            <div id="calendar4">
+                            </div>
+                        </div>
+                   </div>
+                   
+
+                </div>
+            </div>
+        </div>
+
+
+    <script src="src/js/firebase.js" type="module"></script>   
+    <script src="src/js/registroDeTurno.js" type="module"></script>   
+    <script src="src/https://unpkg.com/@popperjs/core@2"></script>
+    <script src="src/js/bootstrap.min.js"></script>
+
+</body>
+</html>

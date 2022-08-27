@@ -1,0 +1,68 @@
+.nav-item a {
+  cursor: pointer;
+}
+
+.footer-text {
+  color: #fff;
+}
+
+.footer-text ul li a {
+  color: #ffffff8c !important;
+}
+
+.testimonio-circle {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eac435;
+}
+
+.nombre-cargo {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.circular--portrait {
+  position: relative;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.circular--portrait img {
+  width: 100%;
+  height: auto;
+}
+
+.circular--none {
+  position: relative;
+  width: 30px;
+  height: 30px;
+  overflow: hidden;
+}
+
+section h4 {
+  text-align: center;
+}
+
+/* video CAEP */
+
+.video-bienvenida {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (min-width: 992px) {
+  .ratio {
+    width: 60%;
+    max-width: 60%;
+  }
+}
+
+
+
