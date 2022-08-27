@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de horario de adoración</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="src/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="src/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="src/favicon/favicon-16x16.png">
+    <link rel="manifest" href="src/favicon/site.webmanifest">
+
+    <link rel="stylesheet" href="src/css/sidebar.css">
+    <!-- <link rel="stylesheet" href="src/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="src/css/registroTurno.css">
+    <!----===== Boxicons CSS ===== -->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+
+    <nav class="sidebar close">
+        <header>
+            <div class="image-text">
+                <span class="image">
+                    <!--<img src="logo.png" alt="">-->
+                </span>
+
+                <div class="text logo-text">
+                    <span class="name">CAEP</span>
+                    <span class="profession">Administrador</span>
+                </div>
+            </div>
+
+            <i class='bx bx-chevron-right toggle'></i>
+        </header>
+
+        <div class="menu-bar">
+            <div class="menu">
+
+                <ul class="menu-links">
+                    <li class="nav-li">
+                        <a href="#">
+                            <i class='bx bx-home-alt icon' ></i>
+                            <span class="text nav-text">Inicio</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-li">
+                        <a href="#">
+                            <i class='bx bx-calendar-edit icon' ></i>
+                            <span class="text nav-text">Registro de turno</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-li">
+                        <a href="#">
+                            <i class='bx bx-list-check icon'></i>
+                            <span class="text nav-text">Nuevos registros</span>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+
+            <div class="bottom-content">
+                <li class="">
+                    <a href="#">
+                        <i class='bx bx-log-out icon' ></i>
+                        <span class="text nav-text">Cerrar Sesión</span>
+                    </a>
+                </li>
+                
+            </div>
+        </div>
+
+    </nav>
+
+    <section class="home">
+
+        <div style="margin-left: 20px;margin-right: 20px;margin-top: 20px;">
+            <div class="wrapper">
+                <div class="">
+                    <div id="calendar1">
+                    </div>
+                </div>
+                <div class="">
+                    <div id="calendar2">
+                    </div>
+                </div>
+                <div class="">
+                    <div id="calendar3">
+                    </div>
+                </div>
+                <div class="">
+                    <div id="calendar4">
+                    </div>
+                </div>
+           </div>
+        </div>
+    
+
+
+    </section>
+
+
+    <!-- script sidebar -->
+    <script>
+        const body = document.querySelector('body'),
+        sidebar = body.querySelector('nav'),
+        toggle = body.querySelector(".toggle"),
+        searchBtn = body.querySelector(".search-box"),
+        modeSwitch = body.querySelector(".toggle-switch"),
+        modeText = body.querySelector(".mode-text");
+   
+        toggle.addEventListener("click" , () =>{
+            sidebar.classList.toggle("close");
+        })
+    </script>
+
+    <script src="src/js/firebase.js" type="module"></script>   
+    <script src="src/js/registroDeTurno.js" type="module"></script>   
+    <script src="src/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

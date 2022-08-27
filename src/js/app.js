@@ -64,11 +64,11 @@ window.addEventListener('load', function(){
 
   document.getElementById('btnAdorar').addEventListener('click',(e)=>{
     e.preventDefault()
-    location.href = 'registroDeTurno.html';
+    location.href = 'registroTurno.html';
   })
   document.getElementById('btnRegistroAdorar').addEventListener('click',(e)=>{
     e.preventDefault()
-    location.href = 'registroDeTurno.html';
+    location.href = 'registroTurno.html';
   })
 
   document.getElementById('login').addEventListener('click',(e)=>{

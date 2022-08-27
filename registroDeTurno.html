@@ -21,29 +21,11 @@
 
     <style>
 
-        ul .list-group-item{
-            background-color: #fdec6f;
-        }
-
-        .list-group-item span{
-            background-color: #fc913a;
-        }
-
         .postick{
             font-size: 0.875rem;
             /* margin: 2px; */
             padding: 0.2rem;
         }
-
-        
-
-        tbody{
-            border-top: 2.5px solid #dee2e6;
-        }
-        tbody td:hover{
-            background-color: rgba(188,232,241,.3);
-        }
-
 
         /* side bar */
 
@@ -61,29 +43,6 @@
         #menu li a:hover{
             color: #ffffff8c ;
         }
-
-        /* calendario grid */
-        .grid-calendario .row{
-            width: 100%;
-            height: 30px;
-            border: 1px solid #000;
-            border-bottom: 0px;
-       }
-       .grid-calendario .row:last-child{
-        border-bottom: 1px solid #000;;
-       }
-       .grid-calendario .row .col{
-        border-right: 1px solid #000;
-        width: 100%;
-        height: 100%
-       }
-       .grid-calendario .row .col:last-child{
-        border-right: 0px;
-       }
-       .grid-calendario .row .col-2{
-        border-right: 1px solid #000;
-       }
-
 
     </style>
 
@@ -145,132 +104,7 @@
                 <!-- page content -->
                 <div class="col py-3">
 
-                    <!-- calendario de registro de turno -->
-                    <!-- <div class=" px-4 py-5" style="margin-top:3rem!important;">
-                        <div class="table-responsive">
-                            <table class="table table-bordered table-sm align-middle">
-                                <thead class="">
-                                    <tr>
-                                        <th scope="col" class="table-active">Madrugada</th>
-                                        <th scope="col">Domingo</th>
-                                        <th scope="col">Lunes</th>
-                                        <th scope="col">Martes</th>
-                                        <th scope="col">Miercoles</th>
-                                        <th scope="col">Jueves</th>
-                                        <th scope="col">Viernes</th>
-                                        <th scope="col">Sabado</th>
-                                    </tr>
-                                </thead>
-                                <tbody >
-                                    <tr>
-                                        <th scope="row">0:00 - 1:00 am</th>
-                                        <td>
-                                            <div class="postick border rounded-2 p-2 bg-primary bg-opacity-50">
-                                                <div class="postick-body d-flex justify-content-between align-items-center">
-                                                    adoradores <span class="badge bg-danger rounded-pill">14</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">1:00 - 2:00 am</th>
-                                        <td>
-                
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                      </tr>
-                                      <tr>
-                                        <th scope="row">2:00 - 3:00 am</th>
-                                        <td>
-                                            <div class="postick border rounded-2 p-2 bg-warning bg-opacity-50">
-                                                <div class="postick-body d-flex justify-content-between align-items-center">
-                                                    Lista dorada <span class="badge bg-danger rounded-pill">4</span>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                      </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div> -->
-
-
-                        <!-- <div class="container">
-                            <div class="cell header main">MADRUGADA</div>
-                            <div class="cell header">DOM</div>
-                            <div class="cell header">LUN</div>
-                            <div class="cell header">MAR</div>
-                            <div class="cell header">MIE</div>
-                            <div class="cell header">JUE</div>
-                            <div class="cell header">VIE</div>
-                            <div class="cell header">SAB</div>
-                            <div class="cell ">00:00 - 1:00 AM</div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                            <div class="cell"></div>
-                          </div> -->
-                    
+                    <!-- calendario de registro de turno -->                   
 
                    <!-- Prueba de calendario dinamico -->
                    

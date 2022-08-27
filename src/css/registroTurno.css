@@ -9,7 +9,16 @@
     .wrapper{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
+        overflow: scroll;
     }
+}
+
+@media (max-width: 600px ) {
+  .wrapper{
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      overflow: scroll;
+  }
 }
 
 .container {
