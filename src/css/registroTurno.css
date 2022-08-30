@@ -1,4 +1,11 @@
 
+.page-content{
+  margin-left: 25px;
+  margin-right: 20px;
+  /* margin-top: 20px; */
+}
+
+
 .wrapper{
     display: grid;
     grid-template-columns: repeat(1, 1fr);

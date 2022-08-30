@@ -25,19 +25,43 @@ onAuthStateChanged(auth, (user) => {
 
   // crear matriz 
 
+  // const CALENDARIO = {
+  //   turno : 'MADRUGADA',
+  //   dias: ['DOM','LUN','MAR','MIER','JUE','VIE','SAB'],
+  //   horas: [
+  //     '0 - 1 AM', 
+  //     '1 - 2 AM', 
+  //     '2 - 3 AM', 
+  //     '3 - 4 AM', 
+  //     '4 - 5 AM', 
+  //     '5 - 6 AM']
+  // }
+
   const CALENDARIO = {
-    turno : 'MADRUGADA',
-    dias: ['DOM','LUN','MAR','MIER','JUE','VIE','SAB'],
-    horas: [
-      '0 - 1 AM', 
-      '1 - 2 AM', 
-      '2 - 3 AM', 
-      '3 - 4 AM', 
-      '4 - 5 AM', 
-      '5 - 6 AM']
+    madrugada:{
+      tittle : 'MADRUGADA',
+      dias: ['DOM','LUN','MAR','MIER','JUE','VIE','SAB'],
+      horas: ['0 - 1 AM', '1 - 2 AM', '2 - 3 AM', '3 - 4 AM', '4 - 5 AM', '5 - 6 AM']
+    },
+    manana:{
+      tittle : 'MAÑANA',
+      dias: ['DOM','LUN','MAR','MIER','JUE','VIE','SAB'],
+      horas: ['6 - 7 AM', '7 - 8 AM', '8 - 9 AM', '9 - 10 AM', '10 - 11 AM', '11 - 12 AM']
+    },
+    tarde:{
+      tittle : 'TARDE',
+      dias: ['DOM','LUN','MAR','MIER','JUE','VIE','SAB'],
+      horas: ['12 - 1 PM', '1 - 2 PM', '2 - 3 PM', '3 - 4 PM', '4 - 5 PM', '5 - 6 PM']
+    },
+    noche:{
+      tittle : 'NOCHE',
+      dias: ['DOM','LUN','MAR','MIER','JUE','VIE','SAB'],
+      horas: ['6 - 7 PM', '7 - 8 PM', '8 - 9 PM', '9 - 10 PM', '10 - 11 PM', '11 - 12 PM']
+    }
   }
 
-  function numCellHours (totalCells){
+
+  function numCellHours (totalCells,calendario){
     let diference = totalCells / 7 // direfencia entre cada termino 
     let totalSequence = 7 // secuencias totaltes
     let firstSequence = 1 // inicio de la secuencia
@@ -50,21 +74,20 @@ onAuthStateChanged(auth, (user) => {
 
     // agregar el string horas a la celda
     let cellHoursMap = secuencia.map((value,index)=>{
-      if(index === 0) return {'idCell': value, 'hora': CALENDARIO.turno}
-      let hora = CALENDARIO.horas.find((value,idHora)=>{ return idHora + 1 === index })
+      if(index === 0) return {'idCell': value, 'hora': calendario.tittle}
+      let hora = calendario.horas.find((value,idHora)=>{ return idHora + 1 === index })
       if(hora != undefined) return {'idCell': value, 'hora': hora}
     })
 
     return cellHoursMap
   }
-  numCellHours(56)  
 
-  function crearMatrizCalendario(){
+  function crearMatrizCalendario(calendario){
     let calendarioMatriz = []
     let elementos = 7*8
 
     // obtener las celdas que son hora (con su respectivo texto de hora)
-    let cellHours = numCellHours(56)
+    let cellHours = numCellHours(56,calendario)
 
     // iteramos las celdas para buscar y agregar el texto en la celda requerida
     for (let i = 0; i < elementos; i++) {
@@ -79,7 +102,7 @@ onAuthStateChanged(auth, (user) => {
       }
       else{
         // texto para los dias
-        let dia = CALENDARIO.dias[i-1]
+        let dia = calendario.dias[i-1]
         if(dia != undefined) {
           calendarioMatriz.push(dia)
         }
@@ -95,9 +118,9 @@ onAuthStateChanged(auth, (user) => {
   }
 
   // dibuja el calendario por turno en html 
-  function drawMatrizCalendar(id){
+  function drawMatrizCalendar(id,calendarioTurno){
 
-    let calendar = crearMatrizCalendario()
+    let calendar = crearMatrizCalendario(calendarioTurno)
     let calendarContentHTML = ''
 
     console.log(calendar)
@@ -108,7 +131,7 @@ onAuthStateChanged(auth, (user) => {
         let celdaHTML = `<div class="cell">
         <div class="postick border rounded-2 bg-primary bg-opacity-50">
           <div class="postick-body d-flex justify-content-between align-items-center">
-              adoradores <span class="badge bg-danger rounded-pill">14</span>
+              adoradores<span class="badge bg-danger rounded-pill">14</span>
           </div>
         </div>
         </div>` 
@@ -129,7 +152,59 @@ onAuthStateChanged(auth, (user) => {
     console.log(calendarContainer)
   }
 
-  drawMatrizCalendar(1)
-  drawMatrizCalendar(2)
-  drawMatrizCalendar(3)
-  drawMatrizCalendar(4)
+
+  // obtiene el objeto que identifica cada celda 
+  function asignarIdsGridTurno(){
+
+    // asignar identificadores de dia y hora
+    const DIAS_SEMANA = ['DOM','LUN','MAR','MIE','JUE','VIE','SAB']
+    const TURNO = [
+      {
+        turno: 'MADRUGADA',
+        horas:[0,1,2,3,4,5]
+      },
+      {
+        turno: 'MAÑANA',
+        horas:[6,7,8,9,10,11]
+      },
+      {
+        turno: 'TARDE',
+        horas:[12,13,14,15,16,17]
+      },
+      {
+        turno: 'MAÑANA',
+        horas:[18,19,20,21,22,23]
+      },
+    ]
+
+    // itereamos los turnos
+    let turnoJSON = []
+    TURNO.forEach((turno,id)=>{
+      
+        // iteramos las horas
+        let res = []
+        turno.horas.forEach((hora)=>{
+            
+          // iteramos los dias
+            let horaDias = []
+            DIAS_SEMANA.forEach((dia)=>{
+                let id = `${dia}-${hora}`
+                horaDias.push({id})
+            })
+            
+            res.push({ 'hora': hora, 'horaDia': horaDias })
+        })
+
+        turnoJSON.push({'turno': turno.turno, 'data': res})
+    })
+
+    return turnoJSON
+}
+
+  drawMatrizCalendar(1, CALENDARIO.madrugada)
+  // drawMatrizCalendar(2, CALENDARIO.manana)
+  // drawMatrizCalendar(3, CALENDARIO.tarde)
+  // drawMatrizCalendar(4, CALENDARIO.noche)
+
+  
+  

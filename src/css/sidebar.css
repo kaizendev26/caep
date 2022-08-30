@@ -297,10 +297,10 @@ body.dark .switch::before{
     transition: var(--tran-05);
 }
 .home .text{
-    font-size: 30px;
-    font-weight: 500;
+    font-size: 25px;
+    font-weight: 400;
     color: var(--text-color);
-    padding: 12px 60px;
+    padding: 12px 0px;
 }
 
 .sidebar.close ~ .home{
