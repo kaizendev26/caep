@@ -25,7 +25,7 @@ function testimonio(item){
     let tieneImagen = item.imgPerfil != (null || undefined || '') ? true : false  //'img/user2.SVG'
 
     let image = tieneImagen ? `<img src="${item.imgPerfil}" alt="twbs" class="circular--portrait flex-shrink-0">` :
-    `<img src="img/user2.SVG" alt="twbs" class="circular--none flex-shrink-0">`
+    `<img src="src/img/user2.SVG" alt="twbs" class="circular--none flex-shrink-0">`
 
     let testimonioHTML = 
         `<li><div class="testimonio card" style="max-width:300px;" id='${item.usuarioId}'>

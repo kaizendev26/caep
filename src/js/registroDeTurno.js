@@ -23,6 +23,7 @@ onAuthStateChanged(auth, (user) => {
 
   })
 
+
   // crear matriz 
 
   // const CALENDARIO = {
@@ -206,5 +207,4 @@ onAuthStateChanged(auth, (user) => {
   // drawMatrizCalendar(3, CALENDARIO.tarde)
   // drawMatrizCalendar(4, CALENDARIO.noche)
 
-  
   

@@ -1,7 +1,7 @@
 const TESTIMONIOS = [
     {
         usuarioId: 1,
-        imgPerfil: 'img/user1.jpeg',
+        imgPerfil: '',
         nombre: 'Erika Valdez',
         cargo: 'Adoradora',
         fecha: 'hace 1 dia',
@@ -9,7 +9,7 @@ const TESTIMONIOS = [
     },
     {
         usuarioId: 2,
-        imgPerfil: 'img/user2.JPG',
+        imgPerfil: '',
         nombre: 'Yesenia Rivera',
         cargo: 'Capitan',
         fecha: 'hace 1 hora',
@@ -17,7 +17,7 @@ const TESTIMONIOS = [
     },
     {
         usuarioId: 3,
-        imgPerfil: 'img/user3.jpeg',
+        imgPerfil: '',
         nombre: 'Yaneth Rivera',
         cargo: 'Padre',
         fecha: 'hace 2 horas',
