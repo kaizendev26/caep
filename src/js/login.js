@@ -44,7 +44,7 @@ function validateEmail(input, requiredMsg, invalidMsg) {
 function exitLogin(){
     let currentUser = JSON.parse(localStorage.getItem('currentUser'))
     if(currentUser != null){
-        location.href = 'RegistroTurno.html';
+        location.href = 'registroTurno.html';
     }
 }
 
@@ -82,7 +82,7 @@ window.addEventListener('load',function(){
 // verificar sesión de usuario
 onAuthStateChanged(auth, (user) => {
     if (user) {   
-        location.href = 'RegistroTurno.html';
+        location.href = 'registroTurno.html';
     } else {
         console.log('sesión cerrada')
     }
