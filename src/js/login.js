@@ -44,7 +44,7 @@ function validateEmail(input, requiredMsg, invalidMsg) {
 function exitLogin(){
     let currentUser = JSON.parse(localStorage.getItem('currentUser'))
     if(currentUser != null){
-        location.href = 'RegistroDeTurno.html';
+        location.href = 'RegistroTurno.html';
     }
 }
 
