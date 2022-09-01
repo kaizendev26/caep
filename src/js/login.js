@@ -82,7 +82,7 @@ window.addEventListener('load',function(){
 // verificar sesión de usuario
 onAuthStateChanged(auth, (user) => {
     if (user) {   
-        location.href = 'RegistroDeTurno.html';
+        location.href = 'RegistroTurno.html';
     } else {
         console.log('sesión cerrada')
     }
