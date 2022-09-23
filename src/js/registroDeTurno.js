@@ -124,24 +124,11 @@ onAuthStateChanged(auth, (user) => {
     let calendar = crearMatrizCalendario(calendarioTurno)
     let calendarContentHTML = ''
 
-    console.log(calendar)
 
     calendar.forEach((celda,index) => {
 
-      if(index === 9){
-        let celdaHTML = `<div class="cell">
-        <div class="postick border rounded-2 bg-primary bg-opacity-50">
-          <div class="postick-body d-flex justify-content-between align-items-center">
-              adoradores<span class="badge bg-danger rounded-pill">14</span>
-          </div>
-        </div>
-        </div>` 
-        calendarContentHTML = calendarContentHTML + celdaHTML
-      }
-      else{
-        let celdaHTML = `<div class="cell">${celda}</div>` 
-        calendarContentHTML = calendarContentHTML + celdaHTML
-      }
+      let celdaHTML = `<div class="cell">${celda}</div>` 
+      calendarContentHTML = calendarContentHTML + celdaHTML
 
     });
 
@@ -150,7 +137,6 @@ onAuthStateChanged(auth, (user) => {
     let calendarDiv = document.getElementById(`calendar${id}`)
     calendarDiv.innerHTML = calendarContainer
 
-    console.log(calendarContainer)
   }
 
 
@@ -201,6 +187,8 @@ onAuthStateChanged(auth, (user) => {
 
     return turnoJSON
 }
+
+  console.log(asignarIdsGridTurno())
 
   drawMatrizCalendar(1, CALENDARIO.madrugada)
   // drawMatrizCalendar(2, CALENDARIO.manana)

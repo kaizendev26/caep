@@ -27,7 +27,6 @@ export async function logout(){
     auth.signOut();
 }
 
-export let checkSession = onAuthStateChanged
 
 // crear metodo para buscar los demas datos de usuario(DB)
 export function isSignIn(){

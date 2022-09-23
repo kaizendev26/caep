@@ -16,15 +16,25 @@
     .wrapper{
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        overflow: scroll;
-    }
+        /* overflow: scroll; */
+        overflow-x: auto;
+        overscroll-behavior-x: contain;
+        overflow-y: hidden;
+        width: auto;
+        grid-gap: 1px;
+        }
 }
 
 @media (max-width: 600px ) {
   .wrapper{
       display: grid;
       grid-template-columns: repeat(1, 1fr);
-      overflow: scroll;
+      /* overflow: scroll; */
+      overflow-x: auto;
+      overscroll-behavior-x: contain;
+      overflow-y: hidden;
+      width: auto;
+      grid-gap: 1px;
   }
 }
 
@@ -49,6 +59,13 @@
     text-align: center;
     padding: .5rem;
     background-color: #fff;
+  
+  }
+
+  @media (max-width: 600px ) {
+    .cell{
+      width: 100px;
+    }
   }
 
   .container .cell:first-child{
