@@ -191,8 +191,8 @@ onAuthStateChanged(auth, (user) => {
   console.log(asignarIdsGridTurno())
 
   drawMatrizCalendar(1, CALENDARIO.madrugada)
-  // drawMatrizCalendar(2, CALENDARIO.manana)
-  // drawMatrizCalendar(3, CALENDARIO.tarde)
-  // drawMatrizCalendar(4, CALENDARIO.noche)
+  drawMatrizCalendar(2, CALENDARIO.manana)
+  drawMatrizCalendar(3, CALENDARIO.tarde)
+  drawMatrizCalendar(4, CALENDARIO.noche)
 
   

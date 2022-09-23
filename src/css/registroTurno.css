@@ -10,6 +10,12 @@
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 10px;
+    padding-bottom: 25px;
+}
+
+.text{
+  font-size: 1.875rem; /* 30px */
+  line-height: 2.25rem; /* 36px */
 }
 
 @media (max-width: 768px ) {
@@ -19,10 +25,18 @@
         /* overflow: scroll; */
         overflow-x: auto;
         overscroll-behavior-x: contain;
-        overflow-y: hidden;
+        overscroll-behavior-y: contain;
+        overflow-y: auto;
         width: auto;
-        grid-gap: 1px;
+        ;
+        grid-gap: 5px;
         }
+
+        
+  .text{
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+  }
 }
 
 @media (max-width: 600px ) {
@@ -32,9 +46,15 @@
       /* overflow: scroll; */
       overflow-x: auto;
       overscroll-behavior-x: contain;
-      overflow-y: hidden;
+      overscroll-behavior-y: contain;
+      overflow-y: auto;
       width: auto;
-      grid-gap: 1px;
+      grid-gap: 5px;
+  }
+
+  .text{
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
   }
 }
 
@@ -64,7 +84,7 @@
 
   @media (max-width: 600px ) {
     .cell{
-      width: 100px;
+      width: 150px;
     }
   }
 
@@ -89,3 +109,5 @@
   .container .cell:nth-child(8n+1){
     font-weight: 500;
   }
+
+  
